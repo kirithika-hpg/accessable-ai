@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Demo Page - AccessAble AI</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #ffffff;
+      color: #0f172a; /* 16:1 contrast ratio against white */
+      line-height: 1.6;
+      padding: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    :focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 2px;
+    }
+    .btn-submit {
+      background-color: #1e40af; /* 8.5:1 contrast against white text */
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input {
+      padding: 8px 12px;
+      border: 2px solid #64748b;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 320px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Accessible Enterprise Services</h1>
+    <nav aria-label="Main Site">
+      <ul>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="services">
+      <h2>Inclusion Principles</h2>
+      <p>
+        Digital products must be perceivable, operable, understandable, and robust for everyone.
+      </p>
+
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300"
+          alt="Two software engineers reviewing accessible user interface components together in an office"
+          width="300"
+          height="200"
+        />
+        <figcaption>Inclusive software engineering team</figcaption>
+      </figure>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form action="/submit" method="POST">
+        <div>
+          <label for="full-name-input">Full Name (Required):</label>
+          <input
+            type="text"
+            id="full-name-input"
+            name="fullname"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div style="margin-top: 16px;">
+          <button type="submit" class="btn-submit" aria-label="Submit Contact Request">
+            Submit Contact Request
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer style="margin-top: 48px; border-top: 1px solid #cbd5e1; padding-top: 16px;">
+    <p>&copy; 2026 Accessible Enterprise. Universal accessibility compliant.</p>
+  </footer>
+</body>
+</html>

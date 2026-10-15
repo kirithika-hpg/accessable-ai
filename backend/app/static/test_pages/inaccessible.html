@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flawed Accessibility Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      padding: 24px;
+    }
+    .low-contrast-text {
+      color: #999999; /* Contrast ratio 2.8:1 on white - FAILS WCAG 1.4.3 */
+      font-size: 14px;
+    }
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+      background: #4f46e5;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Acme Services</h1>
+
+  <!-- Flaw 1: Skipped heading levels (h1 -> h4) -->
+  <h4>Important Announcements</h4>
+
+  <!-- Flaw 2: Missing image alt attribute -->
+  <div>
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" width="300" height="200">
+  </div>
+
+  <!-- Flaw 3: Low contrast text -->
+  <p class="low-contrast-text" style="color: #999999;">
+    Please read our terms and conditions carefully before proceeding with registration.
+  </p>
+
+  <!-- Flaw 4: Form input missing label -->
+  <form action="/submit" method="POST">
+    <div>
+      <span>Your Username:</span>
+      <input type="text" name="username" id="user-input" placeholder="Enter username">
+    </div>
+
+    <!-- Flaw 5: Button without text or accessible name -->
+    <button type="submit" class="btn-icon">
+      <span>→</span>
+    </button>
+  </form>
+
+  <!-- Flaw 6: Link without text or href -->
+  <a href="#">Click here</a>
+</body>
+</html>

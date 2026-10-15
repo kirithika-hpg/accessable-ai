@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-font-scale: 1;
+}
+
+/* Accessible focus styling across all interactive elements */
+*:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* High Contrast Dark Mode (Yellow on Black) */
+.theme-high-contrast-dark {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+.theme-high-contrast-dark * {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+.theme-high-contrast-dark a,
+.theme-high-contrast-dark button {
+  color: #00ffff !important;
+  text-decoration: underline !important;
+  border: 2px solid #00ffff !important;
+}
+
+.theme-high-contrast-dark *:focus-visible {
+  outline: 4px solid #ffffff !important;
+  outline-offset: 3px !important;
+}
+
+/* High Contrast Light Mode (Crisp Black on White) */
+.theme-high-contrast-light {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.theme-high-contrast-light * {
+  border-color: #000000 !important;
+}
+
+.theme-high-contrast-light a,
+.theme-high-contrast-light button {
+  color: #0000ee !important;
+  border-color: #000000 !important;
+}
+
+/* Easy Reading / Dyslexia Friendly Mode */
+.easy-reading-mode {
+  line-height: 1.85 !important;
+  letter-spacing: 0.06em !important;
+  word-spacing: 0.12em !important;
+}
+
+.easy-reading-mode p,
+.easy-reading-mode li,
+.easy-reading-mode span,
+.easy-reading-mode div {
+  line-height: 1.85 !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduced-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Enlarged High-Visibility Custom Cursor */
+.cursor-enlarged,
+.cursor-enlarged * {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24' fill='%232563eb' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='3 3 10 21 13 14 20 11 3 3'/></svg>"), auto !important;
+}
+
+/* Reading Ruler Overlay */
+.reading-ruler-overlay {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: rgba(250, 204, 21, 0.22);
+  border-top: 2px solid #ca8a04;
+  border-bottom: 2px solid #ca8a04;
+  z-index: 9999;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.28);
+  transition: top 0.08s ease-out;
+}
+
+/* Responsive Zoom Safety - Prevents content clipping at 200% zoom */
+@media (min-width: 0px) {
+  html, body {
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+

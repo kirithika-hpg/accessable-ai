@@ -1,0 +1,19 @@
+{
+  "short_name": "AccessAble AI",
+  "name": "AccessAble AI – Intelligent Accessibility Assistant",
+  "description": "Production-grade AI accessibility platform for detecting, understanding, and fixing digital accessibility issues.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/"
+}
